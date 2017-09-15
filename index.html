@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" width="device-width, initial-scale=1";>
+	<title>Set</title>
+
+	<!-- <link rel="shortcut-icon" type="image/x-icon" href="favicon.ico"> -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> <!-- jquery ui-->
+<!-- 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="https://resources/demos/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="boardWrapper"></div>
+		<header>
+			<button class="btn btn-default" id="dirButton">Directions</button>
+			<div class="scores">
+				Player 1: <div class="scoreNum" id="p1Score"></div>
+			</div>
+			<div class="scores">
+				Player 2: <div class="scoreNum" id="p2Score"></div>
+			</div>
+			<div class="scores">
+				Player 3: <div class="scoreNum" id="p3Score"></div>
+			</div>
+			<div class="scores">
+				Deck Size: <div class="scoreNum" id="deckSize"></div>
+			</div>
+			<button class="btn btn-default" id="xColButton">Add 3 cards</button>
+		</header>
+		<main class="container-fluid">
+			<div class="row">
+				<div class="padL1 col-xs-1"></div>
+				<div class="padL2 col-xs-1"></div>
+				<div id="pos00" class="col-xs-2" ><img class="img-responsive" src=""></div>
+				<div id="pos01" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos02" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos03" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos04" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div class="padR1 col-xs-2"></div>
+				<div class="padR2 col-xs-1"></div>
+			</div> <!-- end row 1 -->
+ 			<div class="row">
+				<div class="padL1 col-xs-1"></div>
+				<div class="padL2 col-xs-1"></div>
+				<div id="pos10" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos11" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos12" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos13" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos14" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div class="padR1 col-xs-2"></div>
+				<div class="padR2 col-xs-1"></div>
+			</div> <!-- end row 2 -->
+			<div class="row">
+				<div class="padL1 col-xs-1"></div>
+				<div class="padL2 col-xs-1"></div>
+				<div id="pos20" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos21" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos22" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos23" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos24" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div class="padR1 col-xs-2"></div>
+				<div class="padR2 col-xs-1"></div>			
+			</div> <!-- end row 3 -->
+		</main>	
+
+		<!-- <footer>Rock Bottom</footer> -->
+
+	</div>
+
+		<div id="modalWrapper"> <!-- checkSetMessage -->
+			<div id="checkSetMessage" title="Player Selection Review">
+				<table>
+					<tr>
+						<td></td>
+						<td class = "columnLabel">Color</td>
+						<td class = "columnLabel">Number</td>
+						<td class = "columnLabel">Shading</td>
+						<td class = "columnLabel">Shape</td>
+					</tr>
+					<tr>
+						<td id="psImg1"><img class="modalImg" src=""></td>
+						<td id="psColor1"></td>
+						<td id="psNumber1"></td>
+						<td id="psShading1"></td>
+						<td id="psShape1"></td>
+					</tr>
+					<tr>
+						<td id="psImg2"><img class="modalImg" src=""></td>
+						<td id="psColor2"></td>
+						<td id="psNumber2"></td>
+						<td id="psShading2"></td>
+						<td id="psShape2"></td>
+					</tr>
+					<tr>
+						<td id="psImg3"><img class="modalImg" src=""></td>
+						<td id="psColor3"></td>
+						<td id="psNumber3"></td>
+						<td id="psShading3"></td>
+						<td id="psShape3"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td id="psResult1"></td>
+						<td id="psResult2"></td>
+						<td id="psResult3"></td>
+						<td id="psResult4"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="directionsWrapper"> 
+			<div id="directions" title="Here's how you play SET">
+				<h4>The Magic Rule</h4>
+				<p>If two are... and one is not, then it is not a 'Set'.</p>
+
+				<h4>The Goal</h4>
+				<p>The object of the game is for players to identify SETs from the cards laid out on the board.  A SET consists of 3 cards in which each of the cards' features, looked at one-by-one, are the same on each card, or, are different on each card.  All of the features must separately satisfy this rule. </p>
+
+				<h4>Playing the Game</h4>
+				<p>To claim a set, a player must call 'SET'.  To do this on the computer, each player has been assigned a key:</p>
+				<ul>
+					<li>Player 1: q</li>
+					<li>Player 2: b</li>
+					<li>Player 3: p</li>
+					<li>Cancel Turn: Esc</li>
+				</ul>
+
+				<p>After they have called SET (clicked the appropriate key), a player should select 3 cards.  If correct, the SET is added to the player's score and 3 new cards are added to the board from the deck.  If incorrect, the cards remain on the board and the guessing player loses 1 point.</p>
+				<p>If all players agree that there is not a SET in the 12 cards, 3 more cards can be added to the board by clicking the button in the top right corner of the screen.</p>
+
+				<h4>Here are some examples of SETs</h4>
+				<table class="dirTables">
+					<tr>
+						<td><img class="modalImg" src="img/red-oval-solid-2.png"></td>
+						<td><img class="modalImg" src="img/red-oval-striped-2.png"></td>
+						<td><img class="modalImg" src="img/red-oval-outlined-2.png"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<p>All the same: Red, Oval, 2 Symbols</p>
+							<p>All different: Shading</p>
+						</td>
+
+					</tr>	
+				</table>
+				<table class="dirTables">
+					<tr>
+						<td><img class="modalImg" src="img/green-squiggle-striped-1.png"></td>
+						<td><img class="modalImg" src="img/purple-oval-striped-2.png"></td>
+						<td><img class="modalImg" src="img/red-diamond-striped-3.png"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<p>All the same: Striped</p>
+							<p>All different: Colors, Shapes, # of Symbols</p>
+						</td>
+
+					</tr>	
+				</table>
+
+				<h4>Here are some examples that are NOT SETs</h4>
+				<table class="dirTables">
+					<tr>
+						<td><img class="modalImg" src="img/green-diamond-solid-1.png"></td>
+						<td><img class="modalImg" src="img/purple-diamond-outlined-1.png"></td>
+						<td><img class="modalImg" src="img/red-diamond-outlined-1.png"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<p>All the same: Diamonds, 2 Symbols</p>
+							<p>All different: Colors</p>
+							<p>Why not?: Two are outlined and one is solid</p>
+						</td>
+
+					</tr>	
+				</table>
+				<table class="dirTables">
+					<tr>
+						<td><img class="modalImg" src="img/red-squiggle-solid-2.png"></td>
+						<td><img class="modalImg" src="img/red-squiggle-striped-2.png"></td>
+						<td><img class="modalImg" src="img/red-squiggle-outlined-2.png"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<p>All the same: Squiggle, 2 Symbols</p>
+							<p>All different: Shading</p>
+							<p>Why not?: Two are red and one is green</p>
+						</td>
+
+					</tr>	
+				</table>
+			</div>
+		</div>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!-- jquery ui --> 
+	<script type="text/javascript" src="js/set.js"></script>	
+</body>
+</html>
