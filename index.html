@@ -5,31 +5,34 @@
 	<meta name="viewport" width="device-width, initial-scale=1";>
 	<title>Set</title>
 
-	<!-- <link rel="shortcut-icon" type="image/x-icon" href="favicon.ico"> -->
+	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap -->
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> <!-- jquery ui-->
 <!-- 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<link rel="stylesheet" href="https://resources/demos/style.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
 	<div id="boardWrapper"></div>
 		<header>
-			<button class="btn btn-default" id="dirButton">Directions</button>
-			<div class="scores">
-				Player 1: <div class="scoreNum" id="p1Score"></div>
+			<a href="index.html"><img id="logo" src="img/setLogo.png"></a>
+			<div id="wrapScores">
+				<div class="scores">
+					<p>Player 1</p><div class="scoreNum" id="p1Score"></div>
+				</div>
+				<div class="scores">
+					<p>Player 2</p> <div class="scoreNum" id="p2Score"></div>
+				</div>
+				<div class="scores">
+					<p>Player 3</p> <div class="scoreNum" id="p3Score"></div>
+				</div>
+					
 			</div>
-			<div class="scores">
-				Player 2: <div class="scoreNum" id="p2Score"></div>
-			</div>
-			<div class="scores">
-				Player 3: <div class="scoreNum" id="p3Score"></div>
-			</div>
-			<div class="scores">
-				Deck Size: <div class="scoreNum" id="deckSize"></div>
-			</div>
-			<button class="btn btn-default" id="xColButton">Add 3 cards</button>
+			
+			<button id="xColButton">Add 3 cards</button>
+
 		</header>
 		<main class="container-fluid">
 			<div class="row">
@@ -67,7 +70,10 @@
 			</div> <!-- end row 3 -->
 		</main>	
 
-		<!-- <footer>Rock Bottom</footer> -->
+		<footer>Rock Bottom
+			<a id="dirButton">Directions</a>
+			<div>Deck Size: <span id="deckSize"></span></div>
+		</footer>
 
 	</div>
 

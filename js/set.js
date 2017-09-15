@@ -187,9 +187,9 @@ var resetPlayerSelection = function(){
 		boardElem[i].css('background-color',"");
 	}
 	//remove highlight from player choice
-	p1Score.parent('div').css('background-color',"lightgray");
-	p2Score.parent('div').css('background-color',"lightgray");
-	p3Score.parent('div').css('background-color',"lightgray");
+	p1Score.css('background-color',"#33495f");
+	p2Score.css('background-color',"#33495f");
+	p3Score.css('background-color',"#33495f");
 	//remove event listeners after play
 	$(pos00).prop('onclick',null).off('click');
 	$(pos01).prop('onclick',null).off('click');
@@ -346,7 +346,7 @@ var getClick = function(clickIndex){
 		}
 	}
 	playerSelection[playerSelectionIndex]=selection;
-	boardElem[clickIndex].css('background-color',"green");
+	boardElem[clickIndex].css('background-color',"#ccb361");
 	playerSelectionIndex++;
 	if(playerSelectionIndex>3){
 		if(checkForSet()){
@@ -367,17 +367,17 @@ var getClick = function(clickIndex){
 //click events turn on when players claim board
 $(document).keydown(function (e) {
 	var key = e.which;
-	if(key === 81){ //q
+	if(key === 81 && currentPlayer===0){ //q
 		currentPlayer=1;
-		p1Score.parent('div').css('background-color',"#ccb361");
+		p1Score.css('background-color',"#ccb361");
 	}
-	if(key === 66){ //b
+	if(key === 66 && currentPlayer===0){ //b
 		currentPlayer=2;
-		p2Score.parent('div').css('background-color',"#ccb361");
+		p2Score.css('background-color',"#ccb361");
 	}
-	if(key === 80){ //p
+	if(key === 80 && currentPlayer===0){ //p
 		currentPlayer=3;
-		p3Score.parent('div').css('background-color',"#ccb361");
+		p3Score.css('background-color',"#ccb361");
 	}
 	if(currentPlayer!==0){
 		pos00.click(function(){getClick(0);});
