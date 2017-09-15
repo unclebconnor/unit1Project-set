@@ -15,32 +15,39 @@ header{
 	justify-content: space-between;
 	background-color: #33495f;
 	height: 88px;
-	min-width: 400px;
+	min-width: 750px;
 	white-space: nowrap;
 	overflow-x: : scroll;
 	overflow-x: hidden
 }
 
-
 footer {
 	position: absolute;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	bottom: 0;
 	color: #33495f;
 	background-color: white;
 	border: 1px #33495f groove;
+	min-width: 750px;
 	width: 100%;
 	height: 25px;
 }
 
-tr{
+footer div {
+	margin-left: 13px;
+}
+
+table{
+	margin: 0 2px 0 2px;
 	border:1px solid lightgray;
+	box-shadow: 8px 8px 4px 0 #ececec;
 }
 
 td {
 	text-align: center;
 	width: 120px;
+	border-radius: 4px;
 }
 
 li {
@@ -76,18 +83,17 @@ h4 {
 	width: 48px;	
 }
 
-
 .row {
 	margin: 8px 0 0 0;
 }
 
-.row div {
-	margin: 0 2px;
-	padding: 0 1px;
+.cardPads{
+	margin: 0 2px 0 2px;
+	padding: 0 1px 0 1px;
 	border-radius: 6px;
 }
+
 .img-responsive:hover {
-    /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
     opacity: .7;
 }
 
@@ -95,10 +101,13 @@ h4 {
 	max-width: 70px;
 }
 
+.dirTableWrap {
+	text-align: center;
+}
 
 .dirTables {
 	display: inline-block;
-	margin: 20px auto;
+	margin: 20px 5px;
 }
 
 .dirTables td {
@@ -106,7 +115,12 @@ h4 {
 }
 
 .dirTables td p {
+	margin: 3px 0;
+}
+
+.dirTablesText {
 	text-align: left;
+	background-color: rgba(20,156,168,0.2);
 }
 
 #xColButton{
@@ -122,7 +136,10 @@ h4 {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-
+#xcolButtonWrapper {
+	display: inline-block;
+	width: 300px;
+}
 
 #directionsWrapper {
 	display: inline-block;
@@ -155,15 +172,6 @@ a #logo:hover {
 	margin-top: 7px;
 	display: inline-block;
 }
-
-/*#xColButton {
-	margin: 15px 20px;
-	text-align: center;
-	display: inline-block;
-	width: 160px;
-	height: 25px;
-	color: #fafafa;
-}*/
 
 
 

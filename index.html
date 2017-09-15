@@ -30,49 +30,52 @@
 				</div>
 					
 			</div>
+			<div id="xColButtonWrapper">
+				<button id="xColButton">Add 3 cards</button>
+			</div>
 			
-			<button id="xColButton">Add 3 cards</button>
 
 		</header>
 		<main class="container-fluid">
 			<div class="row">
 				<div class="padL1 col-xs-1"></div>
 				<div class="padL2 col-xs-1"></div>
-				<div id="pos00" class="col-xs-2" ><img class="img-responsive" src=""></div>
-				<div id="pos01" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos02" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos03" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos04" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos00" class="col-xs-2 cardPads" ><img class="img-responsive" src=""></div>
+				<div id="pos01" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos02" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos03" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos04" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
 				<div class="padR1 col-xs-2"></div>
 				<div class="padR2 col-xs-1"></div>
 			</div> <!-- end row 1 -->
  			<div class="row">
 				<div class="padL1 col-xs-1"></div>
 				<div class="padL2 col-xs-1"></div>
-				<div id="pos10" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos11" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos12" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos13" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos14" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos10" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos11" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos12" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos13" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos14" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
 				<div class="padR1 col-xs-2"></div>
 				<div class="padR2 col-xs-1"></div>
 			</div> <!-- end row 2 -->
 			<div class="row">
 				<div class="padL1 col-xs-1"></div>
 				<div class="padL2 col-xs-1"></div>
-				<div id="pos20" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos21" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos22" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos23" class="col-xs-2"><img class="img-responsive" src=""></div>
-				<div id="pos24" class="col-xs-2"><img class="img-responsive" src=""></div>
+				<div id="pos20" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos21" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos22" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos23" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
+				<div id="pos24" class="col-xs-2 cardPads"><img class="img-responsive" src=""></div>
 				<div class="padR1 col-xs-2"></div>
 				<div class="padR2 col-xs-1"></div>			
 			</div> <!-- end row 3 -->
 		</main>	
 
-		<footer>Rock Bottom
+		<footer>
+			<div>Cards in Deck: <span id="deckSize"></span></div>
 			<a id="dirButton">Directions</a>
-			<div>Deck Size: <span id="deckSize"></span></div>
+
 		</footer>
 
 	</div>
@@ -120,7 +123,7 @@
 		</div>
 
 		<div id="directionsWrapper"> 
-			<div id="directions" title="Here's how you play SET">
+			<div id="directions" title="Directions">
 				<h4>The Magic Rule</h4>
 				<p>If two are... and one is not, then it is not a 'Set'.</p>
 
@@ -140,66 +143,66 @@
 				<p>If all players agree that there is not a SET in the 12 cards, 3 more cards can be added to the board by clicking the button in the top right corner of the screen.</p>
 
 				<h4>Here are some examples of SETs</h4>
-				<table class="dirTables">
+				<div class="dirTableWrap">
+					<table class="dirTables">
 					<tr>
 						<td><img class="modalImg" src="img/red-oval-solid-2.png"></td>
 						<td><img class="modalImg" src="img/red-oval-striped-2.png"></td>
 						<td><img class="modalImg" src="img/red-oval-outlined-2.png"></td>
 					</tr>
 					<tr>
-						<td colspan="3">
+						<td colspan="3" class="dirTablesText">
 							<p>All the same: Red, Oval, 2 Symbols</p>
 							<p>All different: Shading</p>
 						</td>
-
 					</tr>	
-				</table>
-				<table class="dirTables">
-					<tr>
-						<td><img class="modalImg" src="img/green-squiggle-striped-1.png"></td>
-						<td><img class="modalImg" src="img/purple-oval-striped-2.png"></td>
-						<td><img class="modalImg" src="img/red-diamond-striped-3.png"></td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<p>All the same: Striped</p>
-							<p>All different: Colors, Shapes, # of Symbols</p>
-						</td>
-
-					</tr>	
-				</table>
+					</table>
+					<table class="dirTables">
+						<tr>
+							<td><img class="modalImg" src="img/green-squiggle-striped-1.png"></td>
+							<td><img class="modalImg" src="img/purple-oval-striped-2.png"></td>
+							<td><img class="modalImg" src="img/red-diamond-striped-3.png"></td>
+						</tr>
+						<tr>
+							<td colspan="3" class="dirTablesText">
+								<p>All the same: Striped</p>
+								<p>All different: Colors, Shapes, # of Symbols</p>
+							</td>
+						</tr>	
+					</table>
+				</div>
 
 				<h4>Here are some examples that are NOT SETs</h4>
-				<table class="dirTables">
-					<tr>
-						<td><img class="modalImg" src="img/green-diamond-solid-1.png"></td>
-						<td><img class="modalImg" src="img/purple-diamond-outlined-1.png"></td>
-						<td><img class="modalImg" src="img/red-diamond-outlined-1.png"></td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<p>All the same: Diamonds, 2 Symbols</p>
-							<p>All different: Colors</p>
-							<p>Why not?: Two are outlined and one is solid</p>
-						</td>
-
-					</tr>	
-				</table>
-				<table class="dirTables">
-					<tr>
-						<td><img class="modalImg" src="img/red-squiggle-solid-2.png"></td>
-						<td><img class="modalImg" src="img/red-squiggle-striped-2.png"></td>
-						<td><img class="modalImg" src="img/red-squiggle-outlined-2.png"></td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<p>All the same: Squiggle, 2 Symbols</p>
-							<p>All different: Shading</p>
-							<p>Why not?: Two are red and one is green</p>
-						</td>
-
-					</tr>	
-				</table>
+				<div class="dirTableWrap">
+					<table class="dirTables">
+						<tr>
+							<td><img class="modalImg" src="img/green-diamond-solid-1.png"></td>
+							<td><img class="modalImg" src="img/purple-diamond-outlined-1.png"></td>
+							<td><img class="modalImg" src="img/red-diamond-outlined-1.png"></td>
+						</tr>
+						<tr>
+							<td colspan="3" class="dirTablesText">
+								<p>All the same: Diamonds, 2 Symbols</p>
+								<p>All different: Colors</p>
+								<p>Why not?: Two are outlined and one is solid</p>
+							</td>
+						</tr>	
+					</table>
+					<table class="dirTables">
+						<tr>
+							<td><img class="modalImg" src="img/red-squiggle-solid-2.png"></td>
+							<td><img class="modalImg" src="img/red-squiggle-striped-2.png"></td>
+							<td><img class="modalImg" src="img/green-squiggle-outlined-2.png"></td>
+						</tr>
+						<tr>
+							<td colspan="3" class="dirTablesText">
+								<p>All the same: Squiggle, 2 Symbols</p>
+								<p>All different: Shading</p>
+								<p>Why not?: Two are red and one is green</p>
+							</td>
+						</tr>	
+					</table>
+				</div>	
 			</div>
 		</div>
 		

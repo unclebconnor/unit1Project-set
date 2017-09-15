@@ -358,7 +358,7 @@ var getClick = function(clickIndex){
 		if(xCol){
 			xColToggle();
 			if(deck.length>12){
-				$(xColButton).show();
+				$(xColButton).css('visibility', 'visible');
 			}	
 		}
 	}
@@ -402,7 +402,7 @@ $(document).keydown(function (e) {
 //extra column toggle
 xColButton.click(function(){
 	xColToggle();
-	$(xColButton).hide();
+	$(xColButton).css('visibility', 'hidden');
 	loadOnBoardArray(15);
 	loadBoard(15);
 });
