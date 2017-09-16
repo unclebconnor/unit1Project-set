@@ -1,13 +1,13 @@
 
 html{
-	/text-align: center;
+	font-family: 'Open Sans', 'Arial Unicode MS',sans-serif;
 }
+
 
 body {
 	margin: 0;
 	padding: 0;
 	background-color: #ececec;
-	font-family: 'Open Sans', sans-serif;
 }
 
 header{
@@ -31,11 +31,11 @@ footer {
 	border: 1px #33495f groove;
 	min-width: 750px;
 	width: 100%;
-	height: 25px;
+	height: 30px;
 }
 
-footer div {
-	margin-left: 13px;
+footer div, a {
+	margin: auto 13px;
 }
 
 table{
@@ -75,6 +75,19 @@ h4 {
 	box-shadow: 2px 6px 12px 0 rgba(0,0,0,0.2), 2px 5px 10px 0 rgba(0,0,0,0.19);
 }
 
+.columnLabel {
+	font-weight: bold;
+	height: 40px
+}
+
+.resultLabel {
+	height: 40px;
+}
+
+.checkSetQual{
+	border: 1px outset #ececec;
+}
+
 .scoreNum{
 	text-align: center;
 	display: inline-block;
@@ -84,10 +97,12 @@ h4 {
 }
 
 .row {
+	display: flex;
+	justify-content: center;
 	margin: 8px 0 0 0;
 }
 
-.cardPads{
+.row div {
 	margin: 0 2px 0 2px;
 	padding: 0 1px 0 1px;
 	border-radius: 6px;
@@ -108,10 +123,11 @@ h4 {
 .dirTables {
 	display: inline-block;
 	margin: 20px 5px;
+	border-radius: 6px;
 }
 
 .dirTables td {
-	padding: 5px;
+	padding: 6px;
 }
 
 .dirTables td p {
@@ -120,7 +136,7 @@ h4 {
 
 .dirTablesText {
 	text-align: left;
-	background-color: rgba(20,156,168,0.2);
+	background-color: rgba(20,156,168,0.1);
 }
 
 #xColButton{
@@ -172,6 +188,12 @@ a #logo:hover {
 	margin-top: 7px;
 	display: inline-block;
 }
+
+#checkSetMessage table {
+	border-collapse: separate;;
+	border-spacing: 5px;
+}
+
 
 
 

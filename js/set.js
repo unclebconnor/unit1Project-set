@@ -14,10 +14,6 @@ $.getJSON('data/cardObject.json', function(data) {
 //clickable items
 var dirButton = $('#dirButton');
 var xColButton = $('#xColButton');
-var padL1 = $('.padL1'); //1 column on left
-var padL2 = $('.padL2'); //1 column on left
-var padR1 = $('.padR1'); //2 column on right
-var padR2 = $('.padR2'); //1 column on right
 
 var pos00 = $('#pos00');
 var pos01 = $('#pos01');
@@ -67,7 +63,7 @@ var directionsWrapper = $('#directionsWrapper');
 
 //initializing party
 var xCol = false;
-padR2.hide();
+// padR2.hide();
 pos04.hide();
 pos14.hide();
 pos24.hide();
@@ -153,16 +149,10 @@ var loadBoard = function(boardSize){
 
 var showHideCols = function(){
 	if(xCol){
-		padL2.hide();
-		padR1.hide();
-		padR2.show();
 		pos04.show();
 		pos14.show();
 		pos24.show();
 	} else {
-		padL2.show();
-		padR1.show();
-		padR2.hide();
 		pos04.hide();
 		pos14.hide();
 		pos24.hide();
@@ -211,15 +201,15 @@ var resetPlayerSelection = function(){
 var checkQuality = function(quality){
 	if(playerSelection[1][quality]===playerSelection[2][quality] 
 		&& playerSelection[1][quality]===playerSelection[3][quality]){
-		playerSelection[4][quality] = "all the same";
+		playerSelection[4][quality] = "All the Same";
 		return true;
 	} else if(playerSelection[1][quality]!==playerSelection[2][quality] 
 		&& playerSelection[1][quality]!==playerSelection[3][quality]
 		&& playerSelection[2][quality]!==playerSelection[3][quality]){
-		playerSelection[4][quality] = "all different";
+		playerSelection[4][quality] = "All Different";
 		return true;
 	} else {
-		playerSelection[4][quality] = "not a set";
+		playerSelection[4][quality] = "Not a SET";
 		return false;
 	}
 }; 
@@ -248,9 +238,9 @@ var checkSetMessage = function(playerNum,isSet){
   	modalWrapper.show();
   	var message;
   	if(isSet){
-  		message = "Player " + playerNum + " got a Set!"
+  		message = "Player " + playerNum + " got a SET!!!"
   	} else {
-  		message = "Player " + playerNum + "'s cards do not make a set :("
+  		message = "Player " + playerNum + "'s cards do not make a SET"
   	}
   	psImg1.children('img').attr('src', "img/" + playerSelection[1].imageURL);
 	psImg2.children('img').attr('src', "img/" + playerSelection[2].imageURL);
@@ -271,6 +261,28 @@ var checkSetMessage = function(playerNum,isSet){
 	psResult2.text(playerSelection[4].number);
 	psResult3.text(playerSelection[4].shading);
 	psResult4.text(playerSelection[4].shape);
+	if(playerSelection[4].color==='Not a SET'){
+		psResult1.css('background-color', 'rgba(169,53,54,0.2)');
+	} else {
+		psResult1.css('background-color', 'rgba(124,156,113,0.2)');
+	}
+	if(playerSelection[4].number==='Not a SET'){
+		psResult2.css('background-color', 'rgba(169,53,54,0.2)');
+	} else {
+		psResult2.css('background-color', 'rgba(124,156,113,0.2)');
+	}
+	if(playerSelection[4].shading==='Not a SET'){
+		psResult3.css('background-color', 'rgba(169,53,54,0.2)');
+	} else {
+		psResult3.css('background-color', 'rgba(124,156,113,0.2)');
+	}
+	if(playerSelection[4].shape==='Not a SET'){
+		psResult4.css('background-color', 'rgba(169,53,54,0.2)');
+	} else {
+		psResult4.css('background-color', 'rgba(124,156,113,0.2)');
+	}
+
+
   	$( "#checkSetMessage" ).dialog({
     	modal: true,
     	buttons: {
@@ -281,7 +293,6 @@ var checkSetMessage = function(playerNum,isSet){
     	},
     	width: 650,
     	title: message
-    	// height: 600
   	}); //jquery ui
 
 }
