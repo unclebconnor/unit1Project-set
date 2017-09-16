@@ -62,7 +62,6 @@ var directionsWrapper = $('#directionsWrapper');
 
 //initializing party
 var xCol = false;
-// padR2.hide();
 pos04.hide();
 pos14.hide();
 pos24.hide();
@@ -362,15 +361,16 @@ var getClick = function(clickIndex){
 		if(checkForSet()){
 			loadOnBoardArray(12);
 			loadBoard(12);	
-		}
-		updateScoreBoard();
-		resetPlayerSelection();
 		if(xCol){
 			xColToggle();
-			if(deck.length>12){
+			if(deck.length>0){
 				$(xColButton).css('visibility', 'visible');
 			}	
 		}
+		}
+		updateScoreBoard();
+		resetPlayerSelection();
+
 	}
 }
 
