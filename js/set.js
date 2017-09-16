@@ -8,7 +8,6 @@ $.getJSON('data/cardObject.json', function(data) {
 	shuffleDeck();
 	loadOnBoardArray(12);
 	loadBoard(12);
-	//some "loading" image
 }); 
 
 //clickable items
@@ -429,5 +428,23 @@ $(document).keydown(function (e) {
 	if(key === 27){ //q
 		resetPlayerSelection();
 	}
+});
+
+var simpleMode = function(){
+	$.getJSON('data/cardObject_justGreen.json', function(data) {
+	cardData = data;
+}).done(function(){
+	shuffleDeck();
+	onBoardArray = ["empty","empty","empty",
+	"empty","empty","empty","empty","empty","empty",
+	"empty","empty","empty","empty","empty","empty"];
+	loadOnBoardArray(12);
+	loadBoard(12);
+}); 
+}
+
+var simpleButton = $('#simpleButton');
+simpleButton.click(function(){
+	simpleMode();
 });
 

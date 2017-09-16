@@ -38,6 +38,10 @@ footer div, a {
 	margin: auto 13px;
 }
 
+a:hover {
+ cursor:pointer;
+}
+
 table{
 	margin: 0 2px 0 2px;
 	border:1px solid lightgray;
@@ -109,6 +113,7 @@ h4 {
 }
 
 .img-responsive:hover {
+	cursor:pointer;
     opacity: .7;
 }
 
