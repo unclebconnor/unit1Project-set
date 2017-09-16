@@ -440,6 +440,9 @@ var simpleMode = function(){
 	"empty","empty","empty","empty","empty","empty"];
 	loadOnBoardArray(12);
 	loadBoard(12);
+	if(xCol){
+		xColToggle();	
+		}
 }); 
 }
 
