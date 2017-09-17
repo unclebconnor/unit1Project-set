@@ -343,10 +343,6 @@ var checkForSet = function(){
 };
 
 var getClick = function(clickIndex){
-	//store selection in one array and data about it 
-	//in another dummy.  unchecking removes from one 
-	//array and not another.  when that one has 3, you're good
-	//then merge the 2 arrays into one for storage
 	playerSelection[0]=currentPlayer; //current player is first index of array
 	var selection = onBoardArray[clickIndex];
 	for(var i = 1; i<4; i++){
@@ -361,12 +357,14 @@ var getClick = function(clickIndex){
 		if(checkForSet()){
 			loadOnBoardArray(12);
 			loadBoard(12);	
-		if(xCol){
-			xColToggle();
-			if(deck.length>0){
-				$(xColButton).css('visibility', 'visible');
-			}	
+			if(xCol){
+				xColToggle();	
+			}
 		}
+		if(deck.length>0){
+			$(xColButton).css('visibility', 'visible');
+		} else {
+			$(xColButton).css('visibility', 'hidden');
 		}
 		updateScoreBoard();
 		resetPlayerSelection();
@@ -429,6 +427,7 @@ $(document).keydown(function (e) {
 		resetPlayerSelection();
 	}
 });
+
 
 var simpleMode = function(){
 	$.getJSON('data/cardObject_justGreen.json', function(data) {
